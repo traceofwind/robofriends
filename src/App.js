@@ -15,18 +15,24 @@ class App extends Component {
 		// STATE >> PROPS
 		this.state = {
 			robots: robots,
-			searchField: ''
+			searchfield: ''
 		}
 	}
 
-	onSearchChange(event) {
+	onSearchChange = (event) => {
 		//function
 		//on search change, 
 		//everytime the input changes,
 		//we get an event.
 		//within this event we will console.log this event.
-		console.log(event.target.value);
+		
 		//event.target.value gives us the value
+
+		//now we can communicate this value to CardsList
+		const filteredRobots = this.state.robots.filter(robots => {
+			return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
+		})
+		console.log(event.target.value);
 	}
 
 	//render () {} is required of class
