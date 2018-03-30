@@ -25,7 +25,8 @@ class App extends Component {
 		//everytime the input changes,
 		//we get an event.
 		//within this event we will console.log this event.
-		console.log(event);
+		console.log(event.target.value);
+		//event.target.value gives us the value
 	}
 
 	//render () {} is required of class
